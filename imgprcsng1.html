@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Your description goes here" />
+	<meta name="keywords" content="your,keywords,goes,here" />
+	<meta name="author" content="Your Name" />
+	<link rel="stylesheet" type="text/css" href="projects.css" title="projects" media="screen,projection" />
+	<style type="text/css">
+	#container{background:#f0f0f0 url(alt-img/bodybg-orange.jpg) repeat-x;}
+	#mainmenu a:hover{background:#f0f0f0 url(alt-img/menuhover-orange.jpg) top left repeat-x;}
+	#mainmenu a.current{background:#f0f0f0 url(alt-img/menuhover-orange.jpg) top left repeat-x;}
+	</style>
+	<title>Explore my projects</title>
+</head>
+
+<body>
+<div id="container">
+	<div id="sitename">
+		<h1>Shankar Jagadeesan</h1>
+		<h2>Teaching machines to see and respond</h2>
+	</div>
+	<div id="mainmenu">
+		<ul>
+			<li><a href="index.html">Home Page</a></li>
+			<li><a href="dl.html">Deep Learning</a></li>
+			<li><a href="research.html">Research Work</a></li>
+			<li><a href="mv.html">Machine Vision</a></li>
+			<li><a href="pp.html">Patents & Pubs</a></li>
+			<li><a href="rovio/index.html" target="_blank">Robotics (CVRL Intern)</a></li>
+			<li><a class="current" href="grad.html">Grad school (old stuff)</a></li>
+		</ul>
+	</div>
+ 
+	<div id="wrap">
+		<div id="rightside">
+			<p>
+				&nbsp;<img src="img/profile.jpg" height="104" width="104" alt="Profile Picture" 
+						style="margin-left: 0px" class="thumbnail"/></p>
+				<h1>Links:</h1>
+				<ul class="linklist">
+					<li><a href="https://shanksvision.github.io/">Home</a></li>
+					<li><a href="http://linkedin.com/in/shankaranandj">LinkedIn</a></li>
+					<li><a href="https://github.com/ShanksVision">GitHub</a></li>
+					<li><a href="http://vision.ece.uic.edu/">Lab</a></li>
+					<li><a href="https://www.cognex.com/products/deep-learning">Work</a></li>				
+					<li><a href="https://open.spotify.com/user/xaqflm5lmkitr6npwq22bozsd?si=UkQA8qOcSXihMcXTqceDCQ">Music</a></li>
+					<li><a href="https://cricclubs.com/NCCA/viewPlayer.do?playerId=407206&clubId=1191#parentHorizontalTab2">Sport</a></li>
+				</ul>
+		</div>
+
+		<div id="contentalt">
+			<h1>Determination and analysis of Signal to Noise Ratio & Compression Ratio in JPEG Encoding</h1>
+			<p class="intro">Theory behind 8*8 FDCT and IDCT</p>
+			<p>At the input to the encoder, source image samples are grouped into 8x8 blocks, shifted from unsigned integers with range [0, 2P - 1] to signed integers with range [-2P-1, 2P-1-1], and input to the Forward DCT (FDCT). At the output from the decoder, the Inverse DCT (IDCT) outputs 8x8 sample blocks to form the reconstructed image. The following equations are the idealized mathematical definitions of the 8x8 FDCT and 8x8 IDCT:</p>
+            <table border="0" align="center"><tr><td><a href="img/jpeq1.png"><img src="img/jpeq1.png" height="200" width="300" alt="Thumbnail of image" /></a></td>
+			</tr></table>
+			<br />
+			<p>The DCT coefficient values can thus be regarded as the relative amount of the 2D spatial frequencies contained in the 64-point input signal. The coefficient with zero frequency in both dimensions is called the �DC coefficient� and the remaining 63 coefficients are called the �AC coefficients.�� Because sample values typically vary slowly from point to point across an image, the FDCT processing step lays the foundation for achieving data compression by concentrating most of the signal in the lower spatial frequencies. For a typical 8x8 sample block from a typical source image, most of the spatial frequencies have zero or near-zero amplitude and need not be encoded</p>
+            <p>At the decoder the IDCT reverses this processing step. It takes the 64 DCT coefficients (which at that point have been quantized) and reconstructs a 64-point ouput image signal by summing the basis signals.Mathematically, the DCT is one-to-one mapping for 64-point vectors between the image and the frequencydomains. If the FDCT and IDCT could be computed with perfect accuracy and if the DCT coefficients were not quantized as in the following description, the original 64-point signal could be exactly recovered. In principle, the DCT introduces no loss to the source image samples; it merely transforms them to a domain in which they can be more efficiently encoded</p>
+            <table border="0" align="center"><tr><td><a href="img/jpbl.png"><img src="img/jpbl.png" height="300" width="400" alt="Thumbnail of image" /></a></td>
+			</tr></table>
+			
+			<h2>Compression & Decompression</h2>
+			<p>The JPEG compression algorithm is widely known to everyone. You can browse the internet and find various pages that explain JPEG coding.The decompression algorithm reverses this process.  The decompressor multiplies the reduced coefficients by the quantization table entries to produce approximate DCT coefficients.  Since these are only approximate,the reconstructed pixel values are also approximate, but if the design
+has done what it's supposed to do, the errors won't be highly visible. A high-quality decompressor will typically add some smoothing steps to reduce pixel-to-pixel discontinuities.
+</p>
+			<p>The JPEG standard does not specify the exact behavior of compressors and decompressors, so there's some room for creative implementation.  In particular, implementations can trade off speed against image quality by choosing more accurate or faster-but-less-accurate  approximations to the DCT.  Similar tradeoffs exist for the downsampling/upsampling and colorspace conversion steps. The quantization matrices are stored in the file so that approximate values of the DCT coefficients may be recomputed. From here, the (Y, Cb, Cr) vector is found through the Inverse Discrete Cosine Transform. Then the (R, G, B) vector is recovered by inverting the color space transform.</p>
+           
+		    <div class="clearingdiv">&nbsp;</div>
+		    <div>
+		    <h2>Results</h2>
+		    <p>I took a RAW Lena Image (256*256) as input. <b>The output is: Peak Signal to Noise ratio is 32dB and the compression ratio is 4.225.</b> This falls in the normal range of jpeg images. Hence we can infer from the compression ratio that there is not much loss in the recovered image. Normally the Compression ratio is between 10 to 30 for lossy compression and its between 2 to 10 for lossless compression. 
+
+The emerging JPEG continuous-tone image compression standard is not a panacea that will solve the myriad issues which must be addressed before digital images will be fully integrated within all the applications that will ultimately benefit from them. For example, if two applications cannot exchange uncompressed images because they use incompatible color spaces, aspect ratios, dimensions, etc. then a common compression method will not help.
+</p>
+			<table border="0"><tr><td><a href="img/jp1.png"><img src="img/jp1.png" height="200" width="350" alt="Thumbnail of image" /></a></td>
+			<td><a href="img/jp2.png"><img src="img/jp2.png" height="200" width="350" alt="Thumbnail of image" /></a></td></tr>
+			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Original Image</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Decompressed Image</td></tr></table>
+			</div>
+			      
+	
+	<div class="clearingdiv">&nbsp;</div>
+	</div>
+	</div>
+</div>
+
+<div id="footer">
+	<p> Reach out/connect <a href="http://linkedin.com/in/shankaranandj">here</a> | <a href="https://shanksvision.github.io/">Home Page</a></p>
+</div>
+
+</body>
+</html>

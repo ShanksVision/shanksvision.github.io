@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Your description goes here" />
+	<meta name="keywords" content="your,keywords,goes,here" />
+	<meta name="author" content="Your Name" />
+	<link rel="stylesheet" type="text/css" href="projects.css" title="projects" media="screen,projection" />
+	<style type="text/css">
+	#container{background:#f0f0f0 url(alt-img/bodybg-green.jpg) repeat-x;}
+	#mainmenu a:hover{background:#f0f0f0 url(alt-img/menuhover-green.jpg) top left repeat-x;}
+	#mainmenu a.current{background:#f0f0f0 url(alt-img/menuhover-green.jpg) top left repeat-x;}
+	</style>
+	<title>RovioSh</title>
+</head>
+
+<body>
+<div id="container">
+	<div id="sitename">
+		<h1>Shankar Jagadeesan</h1>
+		<h2>Teaching machines to see and respond</h2>
+	</div>
+	
+ 
+	<div id="wrap">
+		<div id="rightside">
+		<br />
+		<br />
+		<br />
+					
+			<h1>Links:</h1>
+			<ul class="linklist">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="rovioapi.html">Rovio API</a></li>				
+				<li><a href="roviosh.html">RovioSh</a></li>
+				<li><a href="trackingrovio.html">Tracking Rovio</a></li>
+				<li><a href="intelirovio.html">Self Navigation of Rovio</a></li>
+				<li><a href="imgrovio.html">Image processing with Rovio</a></li>
+				<li><a href="https://github.com/ShanksVision/roviosh" target="_blank">Repo</a></li>
+			</ul>
+		</div>
+		
+		
+<br />
+<br />
+<br />
+<br />
+		<div id="contentalt">
+		
+			<h1>RovioSh – A new dimension for Rovio & Interface with various frameworks</h1>
+			<h2>Mapping rovio's position in a room</h2>
+			<p> This part of my project is a pretty interesting one. I wanted to track the movement of the rovio in a room using the true track system.
+			Rovio knows its own position in the room but we don't have an idea of the presence of rovio in the room unless we see it directly by ourselves.
+			My idea was to create a map of rovio's movement with the help of the coordinates of the true track system.
+			The API is good enough to give you the coordinates by means of the status report cgi script of rovio.
+			</p>
+			
+			<p>I call this cgi script from MATLAB to get the overall status of rovio. Then I filter out all the unwanted components as i just need the x and y coordinates of Rovio.
+			Before doing this we have to calibrate the value returned by the north star sensor since its a dimensionless quantity. For this I made rovio to wander around and got the x,y values and measured the actual distance that rovio covered using measurement tape.
+			Finally I found that 55 units of the north star sensor value is equivalent to 1 centimeter. Another pre-requesite is we need to align the two stars in parallel to the detector in rovio for easy calibration</p>
+			
+			<p>Once we have calibrated the system, we need to start recording these values. I get the x and y values in matlab and store it in a vector. Then I write this vector to an external file (excel or txt) as two columns. I do this for a particular amount of time where the rovio keeps on moving. I write this value every 1 second.
+			I have function called rovio_home in matlab which will calculate the home position of rovio by averaging 10 values of x and y when rovio is static. I do a smoothing since these sensor values are prone to change even if rovio stays at a particular location.
+			From the data file I use a real time plotting software to pick up these values and plot x against y which gives you the map. The data plotting software again picks up the value from data file every second. Thus the system remains synchronized.
+			This can be used for various purposes such as to calculate the dimensions of room by allowing rovio to move around the corners of the room. We can also measure the dimensions of an obstacle. This can be useful in calculating the shortest path, the application goes on...
+			This is the video of the real time plotting of rovio's movement. Now having a look at this you know how rovio is moving without actually seeing it
+			</p>
+			<div><object width="660" height="525"><param name="movie" value="http://www.youtube-nocookie.com/v/5LRmQtjDj54&hl=en_US&fs=1&rel=0&color1=0x006699&color2=0x54abd6&border=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube-nocookie.com/v/5LRmQtjDj54&hl=en_US&fs=1&rel=0&color1=0x006699&color2=0x54abd6&border=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="660" height="525"></embed></object></div>
+			</div>
+	<div class="clearingdiv">&nbsp;</div>
+	</div>
+</div>
+
+<div id="footer">
+	<p> Reach out/connect <a href="http://linkedin.com/in/shankaranandj">here</a> | <a href="https://shanksvision.github.io/">Home Page</a></p>
+</div>
+
+</body>
+</html>

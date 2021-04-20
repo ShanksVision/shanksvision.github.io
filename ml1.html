@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Your description goes here" />
+	<meta name="keywords" content="your,keywords,goes,here" />
+	<meta name="author" content="Your Name" />
+	<link rel="stylesheet" type="text/css" href="projects.css" title="projects" media="screen,projection" />
+	<style type="text/css">
+	#container{background:#f0f0f0 url(alt-img/bodybg-black.jpg) repeat-x;}
+	#mainmenu a:hover{background:#f0f0f0 url(alt-img/menuhover-black.jpg) top left repeat-x;}
+	#mainmenu a.current{background:#f0f0f0 url(alt-img/menuhover-black.jpg) top left repeat-x;}
+	</style>
+	<title>Explore my projects</title>
+</head>
+
+<body>
+<div id="container">
+	<div id="sitename">
+		<h1>Shankar Jagadeesan</h1>
+		<h2>Teaching machines to see and respond</h2>
+	</div>
+	<div id="mainmenu">
+		<ul>
+			<li><a href="index.html">Home Page</a></li>
+			<li><a href="dl.html">Deep Learning</a></li>
+			<li><a href="research.html">Research Work</a></li>
+			<li><a href="mv.html">Machine Vision</a></li>
+			<li><a href="pp.html">Patents & Pubs</a></li>
+			<li><a href="rovio/index.html" target="_blank">Robotics (CVRL Intern)</a></li>
+			<li><a class="current" href="grad.html">Grad school (old stuff)</a></li>
+		</ul>
+	</div>
+ 
+	<div id="wrap">
+		<div id="rightside">
+			&nbsp;<img src="img/profile.jpg" height="104" width="104" alt="Profile Picture" 
+						style="margin-left: 0px" class="thumbnail"/></p>
+				<h1>Links:</h1>
+				<ul class="linklist">
+					<li><a href="https://shanksvision.github.io/">Home</a></li>
+					<li><a href="http://linkedin.com/in/shankaranandj">LinkedIn</a></li>
+					<li><a href="https://github.com/ShanksVision">GitHub</a></li>
+					<li><a href="http://vision.ece.uic.edu/">Lab</a></li>
+					<li><a href="https://www.cognex.com/products/deep-learning">Work</a></li>				
+					<li><a href="https://open.spotify.com/user/xaqflm5lmkitr6npwq22bozsd?si=UkQA8qOcSXihMcXTqceDCQ">Music</a></li>
+					<li><a href="https://cricclubs.com/NCCA/viewPlayer.do?playerId=407206&clubId=1191#parentHorizontalTab2">Sport</a></li>
+				</ul>
+		</div>
+
+		<div id="contentalt">
+			<h1>Prediction of QQQQ using Random tree classification</h1>
+			<p class="intro">There's a lot of machine learning algorithms present today. Each has it's own pros and cons. In this project I was asked to use an efficient ensemble method called Random classification trees.Ensemble methods are learning algorithms that
+construct a set of classifiers and then classify new
+data points by taking a (weighted) vote of their
+predictions. A few examples are Bagging, Boosting, Random forests,etc. One of the big advantages of classification trees is they are easy to understand, can handle missing data and non-parametric</p>
+			
+            <table border="0"><tr><td><a href="img/ct.png"><img src="img/ct.png" height="200" width="400" alt="Thumbnail of image" /></a></td>
+			</tr>
+			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A sample classification tree</td></tr></table>
+			
+	
+	<div class="clearingdiv">&nbsp;</div>
+	<h2>Project description</h2>
+			<p>QQQQ is the power shares value provided by the NASDAQ on daily basis. This is a public data available in various sites. We obtain the data from yahoo finance and the data obtained is for a year. The data obtained can be classified as a time series data set since the values of qqqq are plotted against time.  I define 3 features across the obtained data with 1 categorical variable.  The features are starting value, closing value and volume of the shares. The categorical variable has value of -1,1 or 0 based on daily return.  A random decision tree is built with the above mentioned data. The random decision tree is derived from the concept of random forests developed by Adele Cutler and Leo brieman. The value qqqq is predicted for the future (next day) using the decision tree.  Project was implemented using R, C and Python.</p>
+			
+            <table border="0"><tr><td><a href="img/qqqq.png"><img src="img/qqqq.png" height="200" width="400" alt="Thumbnail of image" /></a></td>
+			</tr>
+			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Poweshares value graph plotted against time</td></tr></table>
+			<br />
+			<h2>Algorithm</h2>
+			<p>1.) Given a tree with interior models labelled with cuts (variable(x) << threshold)(c) and set of interior records, this naturally labels leaves with category y (some class) and say labelling done with majority votes. 2.) To produce a classification tree fix a depth for the binary tree. For each interior node choose an independent variable x and cut c randomly. We go for maximum depth of the tree.</p>
+			
+	</div>
+	</div>
+</div>
+
+<div id="footer">
+	<p> Reach out/connect <a href="http://linkedin.com/in/shankaranandj">here</a> | <a href="https://shanksvision.github.io/">Home Page</a></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Your description goes here" />
+	<meta name="keywords" content="your,keywords,goes,here" />
+	<meta name="author" content="Your Name" />
+	<link rel="stylesheet" type="text/css" href="projects.css" title="projects" media="screen,projection" />
+	<style type="text/css">
+	#container{background:#f0f0f0 url(alt-img/bodybg-green.jpg) repeat-x;}
+	#mainmenu a:hover{background:#f0f0f0 url(alt-img/menuhover-green.jpg) top left repeat-x;}
+	#mainmenu a.current{background:#f0f0f0 url(alt-img/menuhover-green.jpg) top left repeat-x;}
+	</style>
+	<title>Explore my projects</title>
+</head>
+
+<body>
+<div id="container">
+	<div id="sitename">
+		<h1>Shankar Jagadeesan</h1>
+		<h2>Teaching machines to see and respond</h2>
+	</div>
+	<div id="mainmenu">
+		<ul>
+			<li><a href="index.html">Home Page</a></li>
+			<li><a href="dl.html">Deep Learning</a></li>
+			<li><a href="research.html">Research Work</a></li>
+			<li><a href="mv.html">Machine Vision</a></li>
+			<li><a href="pp.html">Patents & Pubs</a></li>
+			<li><a href="rovio/index.html" target="_blank">Robotics (CVRL Intern)</a></li>
+			<li><a class="current" href="grad.html">Grad school (old stuff)</a></li>
+		</ul>
+	</div>
+ 
+	<div id="wrap">
+		<div id="rightside">
+			&nbsp;<img src="img/profile.jpg" height="104" width="104" alt="Profile Picture" 
+						style="margin-left: 0px" class="thumbnail"/></p>
+				<h1>Links:</h1>
+				<ul class="linklist">
+					<li><a href="https://shanksvision.github.io/">Home</a></li>
+					<li><a href="http://linkedin.com/in/shankaranandj">LinkedIn</a></li>
+					<li><a href="https://github.com/ShanksVision">GitHub</a></li>
+					<li><a href="http://vision.ece.uic.edu/">Lab</a></li>
+					<li><a href="https://www.cognex.com/products/deep-learning">Work</a></li>				
+					<li><a href="https://open.spotify.com/user/xaqflm5lmkitr6npwq22bozsd?si=UkQA8qOcSXihMcXTqceDCQ">Music</a></li>
+					<li><a href="https://cricclubs.com/NCCA/viewPlayer.do?playerId=407206&clubId=1191#parentHorizontalTab2">Sport</a></li>
+				</ul>
+		</div>
+
+		<div id="contentalt">
+			<h1>Stereo Triangulation</h1>
+			<p class="intro">A stereo system with calibrated cameras can be used to recover the world 3d coordinates to an accurate extent.  But this process has many sub processes under it. Here in our lab we make use of multiple stereo systems to recover the 3D depth. It�s still an ongoing process, where we are trying to reproject the obtained 2d images from different camera views accurately. So far the calibration and undistortion of cameras has been done and I upload some of the project images. OpenCV is being used for this project and everything is coded using VC++.</p>
+			<p>Below are the some of the images used for calibration and some of the stereo images with large baseline</p>
+
+			<h2>Images of calibration</h2>
+			<p>In the order of Input image, corners found, backprojected with distortion and backprojected after undistortion (click on the image to see the marked corneres clearly)</p>
+			<a href="img/cv1.jpg"><img src="img/cv1.jpg" height="130" width="150" alt="Thumbnail of image" /></a>
+            <a href="img/cv4.jpg"><img src="img/cv4.jpg" height="130" width="150" alt="Thumbnail of image" /></a>
+            <a href="img/cv2.jpg"><img src="img/cv2.jpg" height="130" width="150" alt="Thumbnail of image" /></a>
+            <a href="img/cv3.jpg"><img src="img/cv3.jpg" height="130" width="150" alt="Thumbnail of image" /></a>
+		    <a href="img/cv5.jpg"><img src="img/cv5.jpg" height="130" width="150" alt="Thumbnail of image" /></a>
+            <a href="img/cv8.jpg"><img src="img/cv8.jpg" height="130" width="150" alt="Thumbnail of image" /></a>
+            <a href="img/cv6.jpg"><img src="img/cv6.jpg" height="130" width="150" alt="Thumbnail of image" /></a>
+            <a href="img/cv7.jpg"><img src="img/cv7.jpg" height="130" width="150" alt="Thumbnail of image" /></a>
+		    <div class="clearingdiv">&nbsp;</div>
+		    <div>
+		    <h2>Stereo images with large baseline</h2>
+			<a href="img/left.jpg"><img src="img/left.jpg" height="130" width="160" alt="Thumbnail of image" /></a>
+            <a href="img/right.jpg"><img src="img/right.jpg" height="130" width="160" alt="Thumbnail of image" /></a>
+	        </div>
+	        <div class="clearingdiv">&nbsp;</div>
+	        <h2>Image undistorted with camera intrinsic parameters</h2>
+	        I have used correlation for finding the correspondence in the images here. This is to verify range manually. I got an error of sub millimeter in depth.
+			<a href="img/rightundist.jpg"><img src="img/rightundist.jpg" height="130" width="160" alt="Thumbnail of image" /></a>
+            <a href="img/leftundist.jpg"><img src="img/leftundist.jpg" height="130" width="160" alt="Thumbnail of image" /></a>
+            <div class="clearingdiv">&nbsp;</div>
+            <p><b>
+            I will soon upload the disparity images and Recovered 3D images here.... </b></p>
+	
+	<div class="clearingdiv">&nbsp;</div>
+	</div>
+	</div>
+</div>
+
+<div id="footer">
+	<p> Reach out/connect <a href="http://linkedin.com/in/shankaranandj">here</a> | <a href="https://shanksvision.github.io/">Home Page</a></p>
+</div>
+
+</body>
+</html>

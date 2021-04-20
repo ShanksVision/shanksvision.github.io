@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Your description goes here" />
+	<meta name="keywords" content="your,keywords,goes,here" />
+	<meta name="author" content="Your Name" />
+	<link rel="stylesheet" type="text/css" href="projects.css" title="projects" media="screen,projection" />
+	<style type="text/css">
+	#container{background:#f0f0f0 url(alt-img/bodybg-purple.jpg) repeat-x;}
+	#mainmenu a:hover{background:#f0f0f0 url(alt-img/menuhover-purple.jpg) top left repeat-x;}
+	#mainmenu a.current{background:#f0f0f0 url(alt-img/menuhover-purple.jpg) top left repeat-x;}
+	</style>
+	<title>Explore my projects</title>
+</head>
+
+<body>
+<div id="container">
+	<div id="sitename">
+		<h1>Shankar Jagadeesan</h1>
+		<h2>Teaching machines to see and respond</h2>
+	</div>
+	<div id="mainmenu">
+		<ul>
+			<li><a href="index.html">Home Page</a></li>
+			<li><a href="dl.html">Deep Learning</a></li>
+			<li><a href="research.html">Research Work</a></li>
+			<li><a href="mv.html">Machine Vision</a></li>
+			<li><a href="pp.html">Patents & Pubs</a></li>
+			<li><a href="rovio/index.html" target="_blank">Robotics (CVRL Intern)</a></li>
+			<li><a class="current" href="grad.html">Grad school (old stuff)</a></li>
+		</ul>
+	</div>
+ 
+	<div id="wrap">
+		<div id="rightside">
+			&nbsp;<img src="img/profile.jpg" height="104" width="104" alt="Profile Picture" 
+						style="margin-left: 0px" class="thumbnail"/></p>
+				<h1>Links:</h1>
+				<ul class="linklist">
+					<li><a href="https://shanksvision.github.io/">Home</a></li>
+					<li><a href="http://linkedin.com/in/shankaranandj">LinkedIn</a></li>
+					<li><a href="https://github.com/ShanksVision">GitHub</a></li>
+					<li><a href="http://vision.ece.uic.edu/">Lab</a></li>
+					<li><a href="https://www.cognex.com/products/deep-learning">Work</a></li>				
+					<li><a href="https://open.spotify.com/user/xaqflm5lmkitr6npwq22bozsd?si=UkQA8qOcSXihMcXTqceDCQ">Music</a></li>
+					<li><a href="https://cricclubs.com/NCCA/viewPlayer.do?playerId=407206&clubId=1191#parentHorizontalTab2">Sport</a></li>
+				</ul>
+		</div>
+
+		<div id="contentalt">
+			<h1>Component Video Signal analysis in Spatial and Frequency domain</h1>
+			<p class="intro">In this project we compare the original component video signal telecasted and the recovered component video signal at the reciever. The component to QAM modulated composite signal conversion is performed and the video signal is recovered from the composite signal by demodulation. The project was coded in MATLAB.</p>
+			<h2>Component to Composite to Component - QAM modulation & Demodulation</h2>
+			<p>The main aspect of this computer project is to demonstrate the Color TV broadcasting and receiving. The figure below shows how the video signal is broadcasted received and set of process involved in it.In this project we don�t consider the audio signal, since we are going to multiplex and de-multiplex the video components alone. The input is a raw video signal which is in RGB format. Then the video is converted into YIQ format which contains the Y- Luminance part and I+Q combine to form the chrominance part.</p>
+            <table border="0"><tr><td><a href="img/cs1.png"><img src="img/cs1.png" height="200" width="350" alt="Thumbnail of image" /></a></td>
+			<td><a href="img/cs2.png"><img src="img/cs2.png" height="200" width="350" alt="Thumbnail of image" /></a></td></tr>
+			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The Whole process</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QAM mod & demod</td></tr></table>
+			<p>Now the chrominance and luminance part of the video signal are multiplexed to form the composite video signal.  The chrominance signal can be band limited; hence I and Q components are multiplexed onto the same sub carrier using Quadrature Amplitude Modulation (QAM). QAM is explained in the below diagram. QAM is a method to modulate two signals onto the same carrier frequency, but with 90 degree phase shift.First, the two chrominance components I(t) and Q(t) are combined into a single signal C(t) using quadrature amplitude modulation (QAM). The color sub-carrier frequency fc is chosen to be an odd multiple of half of the line rate, fc = 455*f1/ 2 = 3.58 MHz. This is chosen to satisfy the following criteria: i) It should be high enough where the luminance component has very low energy; ii) It should be  midway between two line rate harmonics where the luminance component is strong; and iii) It should be sufficiently far away from the audio sub-carrier, which is set at 4.5 MHz (286 f1), the same as in the monochrome TV.</p>
+			<br /><br />
+
+			<h2>Recoverying the video signal</h2>
+			<p>Y, I and Q components are filtered using a LPF, where I & Q components are phase shifted by 90 degree.
+I and Q are summed together, and then passed through a band pass filter. The I component is multiplied with cosine signal and gated. All the 3 Components are summed together to form the composite video.
+</p>        <table border="0"><tr><td><a href="img/cs3.png"><img src="img/cs3.png" height="200" width="350" alt="Thumbnail of image" /></a></td>
+			<td><a href="img/cs4.png"><img src="img/cs4.png" height="200" width="350" alt="Thumbnail of image" /></a></td></tr>
+			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RGB Components</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; YIQ Components</td></tr></table>
+			<p>This composite video has to be de-multiplexed at the receiver end into YIQ components. The Y component is then comb filtered, which is used to filter out the harmonic peaks that correspond to chrominance signals. In low-end TV receivers, a low pass filter with cut-off frequency at 3MHz is typically used to separate the luminance and chrominance signal. The high frequency part of I component (2 to 3 Mhz) is still retained in the luminance signal. The extracted chrominance components can contain significant luminance signal in a scene with very high frequency (luminance energy is not negligible near fc). Then the extracted YIQ components are converted into RGB format and displayed in the television sets.</p>
+			  
+		    <div class="clearingdiv">&nbsp;</div>
+		    <div>
+		    <h2>YIQ Waveforms and Comparison of Original & Recovered frames</h2>
+		    <p>In the final figure of the project we compare the original frame and the recovered frame which is received by the television receiver. The Television users see only the recovered frame. When we compare it with the original frame, we can notice the difference in quality of the image. The image looks slightly blurred and it loses its sharpness. The multiplexing methods are designed so that the color TV system is downward compatible with the monochrome TV system. Furthermore, the modulation frequencies for individual components are chosen to minimize the interference among them.</p>
+			<table border="0"><tr><td><a href="img/cs5.png"><img src="img/cs5.png" height="200" width="350" alt="Thumbnail of image" /></a></td>
+			<td><a href="img/cs6.png"><img src="img/cs6.png" height="200" width="350" alt="Thumbnail of image" /></a></td></tr>
+			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I, Q, QAM+I Spectrum</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Y and Composite video spectrum</td></tr>
+			<tr><td><a href="img/cs7.png"><img src="img/cs7.png" height="200" width="350" alt="Thumbnail of image" /></a></td><td><a href="img/cs8.png"><img src="img/cs8.png" height="200" width="350" alt="Thumbnail of image" /></a></td></tr>
+			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Y component without filtering</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Extracted I spectrum after LPF</td></tr>
+            <tr><td><a href="img/cs9.png"><img src="img/cs9.png" height="200" width="350" alt="Thumbnail of image" /></a></td><td><a href="img/cs10.png"><img src="img/cs10.png" height="200" width="350" alt="Thumbnail of image" /></a></td></tr>
+			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Comparison of Original & Recovered I and Q</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Original & Recovered frame</td></tr></table>
+
+			</div>
+			      
+	
+	<div class="clearingdiv">&nbsp;</div>
+	</div>
+	</div>
+</div>
+
+<div id="footer">
+	<p> Reach out/connect <a href="http://linkedin.com/in/shankaranandj">here</a> | <a href="https://shanksvision.github.io/">Home Page</a></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Your description goes here" />
+	<meta name="keywords" content="your,keywords,goes,here" />
+	<meta name="author" content="Your Name" />
+	<link rel="stylesheet" type="text/css" href="projects.css" title="projects" media="screen,projection" />
+	<style type="text/css">
+	#container{background:#f0f0f0 url(alt-img/bodybg-purple.jpg) repeat-x;}
+	#mainmenu a:hover{background:#f0f0f0 url(alt-img/menuhover-purple.jpg) top left repeat-x;}
+	#mainmenu a.current{background:#f0f0f0 url(alt-img/menuhover-purple.jpg) top left repeat-x;}
+	</style>
+	<title>Explore my projects</title>
+</head>
+
+<body>
+<div id="container">
+	<div id="sitename">
+		<h1>Shankar Jagadeesan</h1>
+		<h2>Teaching machines to see and respond</h2>
+	</div>
+	<div id="mainmenu">
+		<ul>
+			<li><a href="index.html">Home Page</a></li>
+			<li><a href="dl.html">Deep Learning</a></li>
+			<li><a href="research.html">Research Work</a></li>
+			<li><a href="mv.html">Machine Vision</a></li>
+			<li><a href="pp.html">Patents & Pubs</a></li>
+			<li><a href="rovio/index.html" target="_blank">Robotics (CVRL Intern)</a></li>
+			<li><a class="current" href="grad.html">Grad school (old stuff)</a></li>
+		</ul>
+	</div>
+ 
+	<div id="wrap">
+		<div id="rightside">
+			&nbsp;<img src="img/profile.jpg" height="104" width="104" alt="Profile Picture" 
+						style="margin-left: 0px" class="thumbnail"/></p>
+				<h1>Links:</h1>
+				<ul class="linklist">
+					<li><a href="https://shanksvision.github.io/">Home</a></li>
+					<li><a href="http://linkedin.com/in/shankaranandj">LinkedIn</a></li>
+					<li><a href="https://github.com/ShanksVision">GitHub</a></li>
+					<li><a href="http://vision.ece.uic.edu/">Lab</a></li>
+					<li><a href="https://www.cognex.com/products/deep-learning">Work</a></li>				
+					<li><a href="https://open.spotify.com/user/xaqflm5lmkitr6npwq22bozsd?si=UkQA8qOcSXihMcXTqceDCQ">Music</a></li>
+					<li><a href="https://cricclubs.com/NCCA/viewPlayer.do?playerId=407206&clubId=1191#parentHorizontalTab2">Sport</a></li>
+				</ul>
+		</div>
+
+		<div id="contentalt">
+			<h1>Motion analysis in Digital video stream</h1>
+			<p class="intro">The project is about comparing the motion analysis of a digital video stream using the following methods:
+
+(a) Optical Flow.
+(b) Displaced Frame Difference
+.</p>
+			<h2>Optical flow</h2>
+			<p>Optical flow is an approximation of the local image motion based upon local derivatives in a given sequence of images. That is, in 2D it specifies how much each image pixel moves between adjacent images while in 3D in specifies how much each volume voxel moves between adjacent volumes. The 2D image sequences used here are formed under perspective projection via the relative motion of a camera and scene objects. The 3D volume sequences used here were formed under orthographic projection for a stationary sensor and a moving/deforming object. In both cases, the moving patterns cause temporal varieties of the image brightness. It is assumed that all temporal intensity changes are due to motion only. This is usually true but there are many exceptions. 2D/3D derivatives are usually computed by repeated application of low pass and high pass filters, for example the filters proposed by Simoncelli. Thus the computation of differential optical flow is, essentially, a two-step procedure:</p>
+            <ul><li>Measure the spatio-temporal intensity derivatives (which is equivalent to measuring the velocities normal to the local intensity structures)</li><li>Integrate normal velocities into full velocities, for example, either locally via a least squares calculation or globally via a regularization</li></ul>
+            <table border="0"><tr><td><a href="img/frm3.jpg"><img src="img/frm3.jpg" height="200" width="290" alt="Thumbnail of image" /></a></td>
+			<td><a href="img/frm4.jpg"><img src="img/frm4.jpg" height="200" width="290" alt="Thumbnail of image" /></a></td><td><a href="img/opf.png"><img src="img/opf.png" height="200" width="300" alt="Thumbnail of image" /></a></td></tr>
+			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frame 1</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Frame 2</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Optical flow</td></tr></table>
+			Lucas-Kanade method is being used here for calculating optical flow.
+			<br /><br />
+
+			<h2>Displaced Frame Difference</h2>
+			<p>The most popular criterion for motion estimation is to minimize the sum of the errors between the luminance values of every pair of corresponding points between the anchor frame and the tracked frame.There are different motion representations as follows</p>
+			<ul><li>Pixel Based</li><li>Block Based</li><li>Region Based</li><li>Global</li></ul>
+			<p>The underlying supposition behind motion estimation is that the patterns corresponding to objects and background in a frame of video sequence move within the frame to form corresponding objects on the subsequent frame. The idea behind block matching is to divide the current frame into a matrix of ‘macro blocks’ that are then compared with corresponding block and its adjacent neighbors in the previous frame to create a vector that stipulates the movement of a macro block from one location to another in the previous frame. This movement calculated for all the macro blocks comprising a frame, constitutes the motion estimated in the current frame. The search area for a good macro block match is constrained up to p pixels on all fours sides of the corresponding macro block in previous frame. This ‘p’ is called as the search parameter. Larger motions require a larger p, and the larger the search parameter the more computationally expensive the process of motion estimation becomes. Usually the macro block is taken as a square of side 16 pixels, and the search parameter p is 7 pixels. The matching of one macro block with another is based on the output of a cost function. The macro block that results in the least cost is the one that matches the closest to current block. There are various cost functions, of which the most popular and less computationally expensive is Mean Absolute Difference (MAD) given by equation (i). Another cost function is Mean Squared Error (MSE) given by equation (ii).</p>
+			<table border="0"><tr><td><a href="img/p5.png"><img src="img/dfdeq1.png" height="130" width="300" alt="Thumbnail of image" /></a></td></tr></table>
+			where N is the side of the macro bock, Cij and Rij are the pixels being compared in current macro block and reference macro block, respectively.           
+		    <div class="clearingdiv">&nbsp;</div>
+		    <div>
+		    <h2>EBMA</h2>
+		    <p>For this project we use Exhaustive Block Matching algorithm.This algorithm, also known as Full Search, is the most computationally expensive block matching algorithm of all. This algorithm calculates the cost function at each possible location in the search window. As a result of which it finds the best possible match and gives the highest PSNR amongst any block matching algorithm. Fast block matching algorithms try to achieve the same PSNR doing as little computation as possible. The obvious disadvantage to ES is that the larger the search window gets the more computations it requires</p>
+			<table border="0"><tr><td><a href="img/dfd1.jpg"><img src="img/dfd1.jpg" height="200" width="350" alt="Thumbnail of image" /></a></td>
+			<td><a href="img/dfd2.jpg"><img src="img/dfd2.jpg" height="200" width="350" alt="Thumbnail of image" /></a></td></tr>
+			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pixel Based</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Block Based</td></tr>
+			<tr><td><a href="img/dfd3.jpg"><img src="img/dfd3.jpg" height="200" width="350" alt="Thumbnail of image" /></a></td><td><a href="img/region1.jpg"><img src="img/region1.jpg" height="200" width="350" alt="Thumbnail of image" /></a></td></tr>
+			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Region Based</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Motion Vectors</td></tr>
+            <tr><td><a href="img/dfd4.jpg"><img src="img/dfd4.jpg" height="200" width="350" alt="Thumbnail of image" /></a></td><td><a href="img/glob_mv.jpg"><img src="img/glob_mv.jpg" height="200" width="350" alt="Thumbnail of image" /></a></td></tr>
+			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Global motion</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Motion Vectors</td></tr></table>
+
+			</div>
+			      
+	
+	<div class="clearingdiv">&nbsp;</div>
+	</div>
+	</div>
+</div>
+
+<div id="footer">
+	<p> Reach out/connect <a href="http://linkedin.com/in/shankaranandj">here</a> | <a href="https://shanksvision.github.io/">Home Page</a></p>
+</div>
+
+</body>
+</html>

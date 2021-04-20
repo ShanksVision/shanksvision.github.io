@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Your description goes here" />
+	<meta name="keywords" content="your,keywords,goes,here" />
+	<meta name="author" content="Your Name" />
+	<link rel="stylesheet" type="text/css" href="projects.css" title="projects" media="screen,projection" />
+	<style type="text/css">
+	#container{background:#f0f0f0 url(alt-img/bodybg-orange.jpg) repeat-x;}
+	#mainmenu a:hover{background:#f0f0f0 url(alt-img/menuhover-orange.jpg) top left repeat-x;}
+	#mainmenu a.current{background:#f0f0f0 url(alt-img/menuhover-orange.jpg) top left repeat-x;}
+	</style>
+	<title>Explore my projects</title>
+</head>
+
+<body>
+<div id="container">
+	<div id="sitename">
+		<h1>Shankar Jagadeesan</h1>
+		<h2>Teaching machines to see and respond</h2>
+	</div>
+	<div id="mainmenu">
+		<ul>
+			<li><a href="index.html">Home Page</a></li>
+			<li><a href="dl.html">Deep Learning</a></li>
+			<li><a href="research.html">Research Work</a></li>
+			<li><a href="mv.html">Machine Vision</a></li>
+			<li><a href="pp.html">Patents & Pubs</a></li>
+			<li><a href="rovio/index.html" target="_blank">Robotics (CVRL Intern)</a></li>
+			<li><a class="current" href="grad.html">Grad school (old stuff)</a></li>
+		</ul>
+	</div>
+ 
+	<div id="wrap">
+		<div id="rightside">
+			&nbsp;<img src="img/profile.jpg" height="104" width="104" alt="Profile Picture" 
+						style="margin-left: 0px" class="thumbnail"/></p>
+				<h1>Links:</h1>
+				<ul class="linklist">
+					<li><a href="https://shanksvision.github.io/">Home</a></li>
+					<li><a href="http://linkedin.com/in/shankaranandj">LinkedIn</a></li>
+					<li><a href="https://github.com/ShanksVision">GitHub</a></li>
+					<li><a href="http://vision.ece.uic.edu/">Lab</a></li>
+					<li><a href="https://www.cognex.com/products/deep-learning">Work</a></li>				
+					<li><a href="https://open.spotify.com/user/xaqflm5lmkitr6npwq22bozsd?si=UkQA8qOcSXihMcXTqceDCQ">Music</a></li>
+					<li><a href="https://cricclubs.com/NCCA/viewPlayer.do?playerId=407206&clubId=1191#parentHorizontalTab2">Sport</a></li>
+				</ul>
+		</div>
+
+		<div id="contentalt">
+			<h1>Image Enhancement - A comparison between Global & Local histogram equalization</h1>
+			<p class="intro">This was part of my course project. I was given the image of White house and asked to do image enhancment by performing local and global histogram equalization on the images. The constrain is not to use any of the matlab inbuilt functions and to build your own histogram function for the above procedure. Performing a FFT with gamma correction and displaying the results is the last part of this project</p>
+			
+			
+			<h2>Global Histogram Equalization</h2>
+			<p>The way Global Histogram Equalization operates is by getting a Histogram that represent the different color weights on the horizontal axes verses the number of pixels that has a specific color weight on the vertical axes.  For example, if we take image below as a gray level image to apply Histogram Equalization on it, we should get a narrow histogram  as the output of detecting the number of pixels that each color weight level has.</p>
+			<p>If we apply the Histogram Equalization function to the input image histogram, we get the results as shown in image below.  We can recognize the areas where the histogram is stretched and the areas where the histogram is compressed.  The areas where the histogram is stretched are the areas where a big number of pixels represent a specific color weight value.  But the areas where color weight values are represented with a small number of pixels are compressed.  Such an operation changes the use of the different color weight values in such a way that makes the image being presented with the maximum different number of color weight values as possible.  This can be obvious in image below, where we can see that the picture of the white house is now clearer than it was in input image.  Some may think that the image has been made darker by reducing the value of the color weights with a fixed number.  However, it is clear that some spots in the image have been made brighter.  The added darkness and brightness to each color level value in the image, depending on its original number of pixels, is what make the resulting Histogram Equalization image clearer than the original one.</p>
+            <table border="0"><tr><td><a href="img/pb1_2.jpg"><img src="img/pb1_2.jpg" height="200" width="290" alt="Thumbnail of image" /></a></td>
+			<td><a href="img/pb1_3.jpg"><img src="img/pb1_3.jpg" height="190" width="290" alt="Thumbnail of image" /></a></td>
+			<td><a href="img/pb1_1.jpg"><img src="img/pb1_1.jpg" height="190" width="290" alt="Thumbnail of image" /></a></td></tr>
+			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Original Image</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Enhanced Image</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Image histograms before and after equalization</td></tr></table>
+           
+		    <div class="clearingdiv">&nbsp;</div>
+		    <div>
+		    <h2>Local Histogram Equalization</h2>
+		    <p>The local histogram equalization is helpful when we need to study a specific object or spot in the image rather than having the whole image operated.  This saves time for the operation to be executed, especially if the image is big and have a big number of pixels.In this Local Histogram Equalization, we can see that the operated part got a little bit brighter.  The reason behind this is because the local area in the original image uses more dark color weight values than bright color values.  This results on using more bright color weights in the resulting image. Below are the images when local histogram equalization in applied in blocks to all parts of the image.</p>
+			<table border="0"><tr><td><a href="img/pb2_2.jpg"><img src="img/pb2_2.jpg" height="200" width="290" alt="Thumbnail of image" /></a></td>
+			<td><a href="img/pb2_3.jpg"><img src="img/pb2_3.jpg" height="190" width="290" alt="Thumbnail of image" /></a></td>
+			<td><a href="img/pb2_1.jpg"><img src="img/pb2_1.jpg" height="190" width="290" alt="Thumbnail of image" /></a></td></tr>
+			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Original Image</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Enhanced Image</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Image histograms before and after equalization</td></tr></table>
+			</div>
+			<div class="clearingdiv">&nbsp;</div>
+			<div>
+		    <h2>FFT and Gamma correction</h2>
+		    <p>Gamma correction is mainly used in images where you need to alter the image pixel intensity. Here we get a FFT of the image and apply gamma correction of 2 to it. From the output you can see that the intensity has increased drastically.</p>
+			<table border="0"><tr><td><a href="img/pb3_1.jpg"><img src="img/pb3_1.jpg" height="200" width="290" alt="Thumbnail of image" /></a></td>
+			<td><a href="img/pb3_2.jpg"><img src="img/pb3_2.jpg" height="190" width="290" alt="Thumbnail of image" /></a></td>
+			<td><a href="img/pb3_3.jpg"><img src="img/pb3_3.jpg" height="190" width="290" alt="Thumbnail of image" /></a></td></tr>
+			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Original Image</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FFT of the Image</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Gamma corrected FFT Image</td></tr></table>
+			</div>
+			<div class="clearingdiv">&nbsp;</div>
+	</div>
+	</div>
+</div>
+
+<div id="footer">
+	<p> Reach out/connect <a href="http://linkedin.com/in/shankaranandj">here</a> | <a href="https://shanksvision.github.io/">Home Page</a></p>
+</div>
+
+</body>
+</html>
